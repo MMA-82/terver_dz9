@@ -10,10 +10,10 @@ def mse_(b1, y = ks, x = zp, n = len(zp)):
     return np.sum((b1 * x - y)**2)/ n
 
 alpha = 1e-6
-b1 = 400
+b1 = 6
 
-for i in range (1000):
+for i in range (500):
     b1 -= alpha * (2/len(zp)) * np.sum((b1 * zp - ks) * zp)
-    if i % 50 == 0:
+    if i % 25 == 0:
         print('b1 = {}, mse = {}'.format(b1, mse_(b1)))
 
